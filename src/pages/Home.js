@@ -12,6 +12,10 @@ import Button from 'react-bootstrap/Button';
 import { useState, useEffect, Fragment } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import meme1 from '../images/meme1.png';
+import meme2 from '../images/meme2c.jpg';
+import meme3 from '../images/meme3c.jpg';
+import Typing from 'react-typing-animation';
+import Card from 'react-bootstrap/Card';
 
 function TEST() {
     let a = 4;
@@ -145,7 +149,7 @@ function DontKnowWhatToLearn() {
         if (isLoading) {
             simulateNetworkRequest().then(() => {
                 setLoading(false);
-                window.location.href = '/SearchByWord';
+                window.location.href = '/GiveMeSentences';
             });
         }
     }, [isLoading]);
@@ -272,6 +276,339 @@ function FlipCard() {
     );
 }
 
+const AnimatedTypingComponent = () => {
+    const [TypeEffect, setTypeEffect] = useState(false);
+    const [FlipMyCard, setFlipMyCard] = useState(false);
+    const [TypingTurn, setTypingTurn] = useState(false);
+    const [TypingTurnSecond, setTypingTurnSecond] = useState(false);
+    const [TypingTurnSecond2, setTypingTurnSecond2] = useState(false);
+    const [TypingTurnSecond3, setTypingTurnSecond3] = useState(false);
+    const [TypingTurnThid, setTypingTurnThird] = useState(false);
+    const [TypingTurnThid2, setTypingTurnThird2] = useState(false);
+    const [TypingTurnThid3, setTypingTurnThird3] = useState(false);
+
+    const TypingFirstCardExplications = () => {
+        setTypingTurn(!TypingTurn);
+    };
+
+    const TypingSecondCardExplication = () => {
+        setTypingTurnSecond(!TypingTurnSecond);
+    };
+
+    const TypingSecondCardExplication2 = () => {
+        setTypingTurnSecond2(!TypingTurnSecond2);
+    };
+
+    const TypingSecondCardExplication3 = () => {
+        setTypingTurnSecond3(!TypingTurnSecond3);
+    };
+
+    const TypingThirdCardExplication = () => {
+        setTypingTurnThird(!TypingTurnThid);
+    };
+    const TypingThirdCardExplication2 = () => {
+        setTypingTurnThird2(!TypingTurnThid2);
+    };
+    const TypingThirdCardExplication3 = () => {
+        setTypingTurnThird3(!TypingTurnThid3);
+    };
+
+    const AfterTimeEnd = () => {
+        const timer = setTimeout(() => {
+            console.log('Hello, World!');
+            setTypeEffect(true);
+        }, 5000);
+        return () => clearInterval(timer);
+    };
+
+    const SomeTest = () => {
+        setFlipMyCard(!FlipCard);
+    };
+
+    return (
+        <>
+            <Typing onAfterType={AfterTimeEnd} startDelay='3000'>
+                <div className='LikeMemes '>
+                    Because we know that you like memes...
+                </div>
+                <Typing.Delay ms={1000} />
+            </Typing>
+
+            {TypeEffect ? (
+                <div>
+                    <div class='cardMeme cardMemeFirst'>
+                        <div
+                            class='frontMemeCard'
+
+                            // onMouseOut={StartThis}>
+                        >
+                            <Card
+                                // border='none'
+                                // bg='Light'
+                                style={{ width: '18rem' }}>
+                                <Card.Img variant='top' src={meme1} />
+                                <Card.Body bsPrefix='STILIZAM'>
+                                    <Card.Title>
+                                        We know how you feel
+                                    </Card.Title>
+                                    <Card.Text>
+                                        Just give yourself time, it takes a lot
+                                        of time and effort to be fluent in a new
+                                        language
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div class='backMemeCard'>
+                            <div className='TitleFirstCard'>
+                                Glad to see your here!
+                            </div>
+                            <div className='explainCards'>
+                                On every meme card on the back we explain the
+                                korean language used in it.{' '}
+                            </div>
+                            <div className='explainCards'>
+                                Hope it will helps you!{' '}
+                            </div>
+                            <div
+                                className='koreanTextFirstCard'
+                                onMouseOver={TypingFirstCardExplications}
+                                onMouseOut={TypingFirstCardExplications}>
+                                화이팅!
+                            </div>
+
+                            {TypingTurn ? (
+                                <Typing startDelay='100'>
+                                    <div className='koreanSlang'>
+                                        {' '}
+                                        화이팅 = Korean slang, usually express
+                                        something similar like "you can do it!/
+                                        let's do it!"
+                                    </div>
+                                    <Typing.Delay ms={1000} />
+                                </Typing>
+                            ) : (
+                                <div>
+                                    Go to click on "화이팅" to see it s
+                                    explications!
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    <div class='cardMeme cardMemeSecond '>
+                        <div class='frontMemeCard'>
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant='top' src={meme2} />
+                                <Card.Body bsPrefix='STILIZAM'>
+                                    <Card.Title>
+                                        Let's start with smth easy
+                                    </Card.Title>
+                                    <Card.Text>
+                                        Now flip the card if you don't
+                                        understand this meme
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div class='backMemeCard'>
+                            <div className='TitleFirstCard'>
+                                Some basic words
+                            </div>
+                            <div className='explainCards alignThis'>
+                                The words are:
+                            </div>
+                            <div className='explainCards alignThis '>
+                                {''}
+                                <div
+                                    className='alignThis'
+                                    onMouseOver={TypingThirdCardExplication}
+                                    onMouseOut={TypingThirdCardExplication}>
+                                    외국인,
+                                </div>{' '}
+                                <div
+                                    className='alignThis'
+                                    onMouseOver={TypingThirdCardExplication2}
+                                    onMouseOut={TypingThirdCardExplication2}>
+                                    한국인,
+                                </div>
+                                <div
+                                    className='explainCards'
+                                    onMouseOver={TypingThirdCardExplication3}
+                                    onMouseOut={TypingThirdCardExplication3}>
+                                    {' '}
+                                    안녕하세요{' '}
+                                </div>
+                            </div>
+
+                            <div className='explicationTime explainWords '>
+                                {TypingTurnThid ? (
+                                    <div>
+                                        <Typing startDelay='100'>
+                                            <div className='koreanForeigner'>
+                                                {' '}
+                                                외국인 = foreigner.
+                                            </div>
+                                            <Typing.Delay ms={1000} />
+                                        </Typing>
+                                    </div>
+                                ) : (
+                                    <div></div>
+                                )}
+
+                                {TypingTurnThid2 ? (
+                                    <div>
+                                        <Typing startDelay='100'>
+                                            <div className='koreanKoreanWord'>
+                                                한국인 = 한국 (Korea) + 인
+                                                (Person) = korean person.
+                                            </div>
+                                            <Typing.Delay ms={1000} />
+                                        </Typing>
+                                    </div>
+                                ) : (
+                                    <div></div>
+                                )}
+                                {TypingTurnThid3 ? (
+                                    <div>
+                                        <Typing startDelay='100'>
+                                            <div className='koreanHiWord'>
+                                                안녕하세요 = Most basically
+                                                korean formal "Hello" that you
+                                                can hear in kdramas :)
+                                            </div>
+                                            <Typing.Delay ms={1000} />
+                                        </Typing>
+                                    </div>
+                                ) : (
+                                    <div> </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='cardMeme cardMemeThird '>
+                        <div class='frontMemeCard middleCard'>
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant='top' src={meme3} />
+                                <Card.Body bsPrefix='STILIZAM'>
+                                    <Card.Title>
+                                        Let's try a full sentence too
+                                    </Card.Title>
+                                    <Card.Text>
+                                        What are you waiting? flip it!
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div class='backMemeCard'>
+                            <div className='TitleFirstCard'>
+                                <div>
+                                    I know it's a full sentence but you can do
+                                    it!
+                                </div>
+                                <div className='explicationTimeForMiddleMeme'>
+                                    <div className='explainKoreanThird'>
+                                        The sentence it's:{' '}
+                                        <div
+                                            className='alignThis'
+                                            onMouseOver={
+                                                TypingSecondCardExplication
+                                            }
+                                            onMouseOut={
+                                                TypingSecondCardExplication
+                                            }>
+                                            저도
+                                        </div>{' '}
+                                        <div
+                                            className='alignThis EnglishLangauge'
+                                            onMouseOver={
+                                                TypingSecondCardExplication2
+                                            }
+                                            onMouseOut={
+                                                TypingSecondCardExplication2
+                                            }>
+                                            {' '}
+                                            영어{' '}
+                                        </div>{' '}
+                                        <div
+                                            className='alignThis'
+                                            onMouseOver={
+                                                TypingSecondCardExplication3
+                                            }
+                                            onMouseOut={
+                                                TypingSecondCardExplication3
+                                            }>
+                                            못해요
+                                        </div>
+                                    </div>
+                                    {TypingTurnSecond ? (
+                                        <div>
+                                            <Typing startDelay='100'>
+                                                <div className='SomeTopSpaceBetweenWoeds thirdMemeCardMeToo'>
+                                                    저도 = 저 (Me) + 도 (too) =
+                                                    Me too{' '}
+                                                </div>
+                                                <Typing.Delay ms={1000} />
+                                            </Typing>
+                                        </div>
+                                    ) : (
+                                        <div></div>
+                                    )}
+                                    {TypingTurnSecond2 ? (
+                                        <div>
+                                            <Typing startDelay='100'>
+                                                <div className='SomeTopSpaceBetweenWoeds thirdMemeCardMeToo'>
+                                                    영어 = 영 (America) + 어
+                                                    (language) it means english
+                                                    language
+                                                </div>
+                                                <Typing.Delay ms={1000} />
+                                            </Typing>
+                                        </div>
+                                    ) : (
+                                        <div></div>
+                                    )}
+                                    {TypingTurnSecond3 ? (
+                                        <div>
+                                            <Typing startDelay='100'>
+                                                <div className='SomeTopSpaceBetweenWoeds thirdMemeCardMeToo'>
+                                                    못해 it's a grammar
+                                                    structure that cames from:
+                                                </div>
+                                                <Typing.Delay ms={1000} />
+                                            </Typing>
+                                            <Typing startDelay='7000'>
+                                                <div className='SomeTopSpaceBetweenWoeds'>
+                                                    못 + 하다 = to do = 못해
+                                                    whichs means I can't do{' '}
+                                                </div>
+                                                <Typing.Delay ms={1000} />
+                                            </Typing>
+                                            <Typing startDelay='14000'>
+                                                <div className='SomeTopSpaceBetweenWoeds'>
+                                                    Another example: 못 (Can't)
+                                                    + 먹다 (To eat) = 못 먹어 (I
+                                                    can't eat){' '}
+                                                </div>
+                                                <Typing.Delay ms={1000} />
+                                            </Typing>
+                                        </div>
+                                    ) : (
+                                        <div></div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <div></div>
+            )}
+        </>
+    );
+};
+
 function HomePage() {
     return (
         <>
@@ -280,6 +617,7 @@ function HomePage() {
 
             <AboutThisWebsite />
             <FlipCard />
+            <AnimatedTypingComponent />
         </>
     );
 }

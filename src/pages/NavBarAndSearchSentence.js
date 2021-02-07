@@ -24,6 +24,7 @@ export default function NavbarFunction(props) {
             .catch(function (error) {
                 console.log('mergi');
                 props.setCantFindd("We can't find the word in our database");
+
                 window.location.href = '/Home#yourAnchorTag';
             });
         // history.push('/Home', 'yourAnchorTag');

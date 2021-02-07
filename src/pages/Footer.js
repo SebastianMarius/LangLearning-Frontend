@@ -9,7 +9,7 @@ const FooterPage = () => {
             <footer className='bg-dark text-center text-lg-start Footerul'>
                 <div className='container p-4'>
                     <div className='row'>
-                        <div className='col-lg-6 col-md-12 mb-4 mb-md-0'>
+                        <div className='col-lg-6 col-md-12 mb-4 mb-md-0 test'>
                             <h5 className='text-uppercase'>
                                 Learning vocabulary{' '}
                             </h5>
@@ -24,9 +24,9 @@ const FooterPage = () => {
                         </div>
 
                         <div className='col-lg-3 col-md-6 mb-4 mb-md-0'>
-                            <h5 className='text-uppercase'>Explore</h5>
+                            <h5 className='text-uppercase test2'>Explore</h5>
 
-                            <ul className='list-unstyled mb-0'>
+                            <ul className='list-unstyled mb-0 test2'>
                                 <li>
                                     <a href='Home' className='text-light'>
                                         Home page
@@ -53,7 +53,7 @@ const FooterPage = () => {
                             </ul>
                         </div>
 
-                        <div className='col-lg-3 col-md-6 mb-4 mb-md-0'>
+                        <div className='socialMediaa col-lg-3 col-md-6 mb-4 mb-md-0'>
                             <h5 className='text-uppercase mb-0'>
                                 Social media and community
                             </h5>

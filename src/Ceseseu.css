@@ -271,3 +271,184 @@
 
 #yourAnchorTag {
 }
+
+.TypeAnimation {
+    font-size: 150%;
+    text-align: start;
+    margin-left: 2%;
+    margin-top: 6%;
+}
+
+.photoesMemes {
+    width: 286px;
+    height: 180px;
+}
+
+.cardMeme {
+    position: relative;
+    width: 9rem;
+    height: 12rem;
+    perspective: 30rem;
+    z-index: 101;
+}
+
+.cardMemeFirst {
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.cardMemeSecond {
+    margin-left: 80%;
+    margin-top: -16%;
+    margin-bottom: 25%;
+}
+
+.cardMemeThird {
+    margin-left: 42%;
+    margin-top: -34%;
+    margin-bottom: 15%;
+}
+
+.frontMemeCard,
+.backMemeCard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    backface-visibility: hidden;
+}
+
+.frontMemeCard {
+}
+.backMemeCard {
+    background-color: #ecf0f1;
+    width: 220%;
+    height: 210%;
+    transform: rotateY(180deg);
+}
+.cardMeme:hover .frontMemeCard {
+    transform: rotateY(180deg);
+}
+.cardMeme:hover .backMemeCard {
+    transform: rotateY(360deg);
+}
+
+.koreanSlang {
+    padding-top: 60%;
+    padding-left: 3%;
+    padding-right: 3%;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 80%;
+    font-weight: 800;
+    font-style: oblique;
+}
+
+.explicationTime {
+    padding-top: 40%;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 80%;
+    font-weight: 800;
+    font-style: oblique;
+}
+
+.explicationTimeForMiddleMeme {
+    padding-top: 15%;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50%;
+    font-weight: 800;
+    font-style: oblique;
+}
+
+.TitleFirstCard {
+    padding-top: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 150%;
+    margin-left: 1%;
+}
+
+.explainCards {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.koreanTextFirstCard {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 150%;
+    z-index: 102;
+}
+
+.STILIZAM {
+    background-color: #f8f9f9;
+    padding-bottom: 4%;
+    padding-top: 3%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.alignThis {
+    display: inline;
+}
+
+.koreanForeigner,
+.koreanHiWord,
+.koreanKoreanWord,
+.SomeTopSpaceBetweenWoeds {
+    margin-bottom: 3%;
+}
+
+.thirdMemeCardMeToo {
+    padding-top: 65%;
+}
+
+.explainWords {
+    margin-top: 15%;
+}
+
+.explainKoreanThird {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 120%;
+    margin-top: -15%;
+}
+
+.EnglishLangauge {
+    vertical-align: middle;
+}
+
+.LikeMemes {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+    font-size: 200%;
+    margin-top: 5%;
+
+    background-color: #f2f2f2;
+    padding: 2%;
+}
+
+.backgroundMeme {
+    text-shadow: 1px 1px;
+}
+
+.middleCard {
+}
+/* .test { */
+/* margin-left: -25%; */
+/* margin-right: 2%; */
+/* } */
+
+/* .test2 { */
+/* margin-right: -100%; */
+/* } */
+
+/* .socialMediaa { */
+/* margin-left: 20%; */
+/* } */
+
+/* DE AICI INCEPE CSSUL PT SEARCH RANDOM SENTENCES  */
