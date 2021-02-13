@@ -53,7 +53,7 @@ export default function NavbarFunction(props) {
                         <Nav.Link href='SendEmail'>
                             Send us your thoughts
                         </Nav.Link>
-                        <Nav.Link href='SearchByWord'>Pricing</Nav.Link>
+                        <Nav.Link href='SearchByWord'></Nav.Link>
                     </Nav>
                     <Form inline>
                         <FormControl

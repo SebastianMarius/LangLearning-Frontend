@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../../src/Ceseseu2.css';
 import koreanLang from '../imagesRandomSentence/koreanLang.png';
 import {
@@ -23,12 +23,26 @@ import KoreanFlag from '../imagesRandomSentence/koreanFlag.jpg';
 
 function ShowRandomSentences() {
     const [fethData, setfetchData] = useState('');
+    const [RotateButton, setRotateButton] = useState(false);
+    const [ButtonOnLoad, setButtonOnLoad] = useState(false);
+
     const FetchIt = () => {
         fetch('http://localhost:8080/words/randomSentenceBeginner')
             .then((response) => response.json())
             .then(setfetchData)
             .then(console.log(fethData));
+        setRotateButton(true);
+        setButtonOnLoad(false);
+        buttonAnimation();
     };
+
+    function buttonAnimation() {
+        const timer = setTimeout(() => {
+            setRotateButton(false);
+            setButtonOnLoad(true);
+            console.log('in useefect');
+        }, 2000);
+    }
 
     return (
         <>
@@ -49,7 +63,7 @@ function ShowRandomSentences() {
                                             something new!
                                         </h1>
                                         <hr className='hr-light' />
-                                        <h6 className='mb-4 onPhotoText'>
+                                        <h6 className='mb-4 onPhotoText randomSentenceText'>
                                             If you feel like some words are
                                             missing, please do not hesitate to
                                             use feedback section
@@ -68,17 +82,45 @@ function ShowRandomSentences() {
                 </MDBView>
             </div>
 
-            <button className='buttonRandomS' onClick={FetchIt}>
-                Click meS
-            </button>
+            <button
+                onClick={FetchIt}
+                className={
+                    +RotateButton
+                        ? 'buttonAfterClick buttonSearch'
+                        : 'testButon buttonSearch'
+                }
+                style={{
+                    backgroundImage: `url(${KoreanFlag})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                }}></button>
 
-            {fethData ? (
+            {fethData && ButtonOnLoad ? (
                 <div>
-                    <h1>{fethData.kothirdSentence}</h1>
-                    <h1>{fethData.kowordTranslation}</h1>
-                    <h1>{fethData.koword}</h1>
-                    <h1>{fethData.korfirstSentence}</h1>
-                    <h1>{fethData.korfirstSentence}</h1>
+                    <div>
+                        <div className='WordsHeader'>
+                            <div>Korean word: {fethData.koword}</div>
+                            <div>
+                                English translation:{' '}
+                                {fethData.kowordTranslation}
+                            </div>
+                        </div>
+                        <div className='KoreanSentences'>
+                            <div>
+                                {' '}
+                                First sentence: {fethData.korfirstSentence}{' '}
+                            </div>
+                            <div>
+                                {' '}
+                                Second sentence: {fethData.kosecondSentence}
+                            </div>
+                            <div>
+                                Third sentence: {fethData.kothirdSentence}
+                            </div>
+
+                            {/* <h1>{props.fetchu}</h1> */}
+                        </div>
+                    </div>
                 </div>
             ) : (
                 <div></div>
