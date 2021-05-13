@@ -9,8 +9,7 @@ import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 
 export default function NavbarFunction(props) {
     const [sentence, setSentence] = useState('');
-    // const [fetchu, setFetchu] = useState('');
-    // const [cantFind, setCantFind] = useState('');
+    
     let history = useHistory();
 
     const FetchData = () => {
@@ -102,7 +101,7 @@ function NavBarSearchSentences(props) {
                     </div>
                 </div>
             ) : (
-                // <h1> {fetchu.kosecondSentence}  </h1>
+              
 
                 <div>
                     <h1 className='someSpace'>{props.cantFind}</h1>
